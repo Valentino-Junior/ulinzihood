@@ -1,13 +1,12 @@
 <style>
-    form {
-        margin-left: 200%;
-    }
-   
+  form {
+    margin-left: 200%;
+  }
 </style>
 <!--Navbar -->
 <nav class="mb-1 navbar navbar-expand-lg navbar-dark" style="background-color:dimgrey">
   <a class="navbar-brand" href="/">
-      <i class="fas fa-home" style="font-size:36px;"></i>
+    <i class="fas fa-home" style="font-size:36px;"></i>
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
     aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
@@ -28,11 +27,12 @@
         <a class="nav-link" href="{%url 'create_profile'%}"><b>Hood</b></a>
       </li>
       <li class="nav-item dropdown ">
-          <form class="form-inline navbar-form " role="search" action="{%url 'search'%}">
-              <div class="md-form my-0">
-                  <input class="form-control mr-sm-2 " type="text" name="businesses" placeholder="Search Enterprises" aria-label="Search">
-              </div>
-          </form>
+        <form class="form-inline navbar-form " role="search" action="{%url 'search'%}">
+          <div class="md-form my-0">
+            <input class="form-control mr-sm-2 " type="text" name="businesses" placeholder="Search Enterprises"
+              aria-label="Search">
+          </div>
+        </form>
       </li>
     </ul>
     <ul class="navbar-nav ml-auto nav-flex-icons">
@@ -45,11 +45,10 @@
       {% else %}
       <li class="nav-item dropdown">
         <a class="nav-link waves-effect waves-light dropdown-toggle" id="navbarDropdownMenuLink-333"
-           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="fas fa-sign-in-alt" style="font-size:26px;"></i>
         </a>
-        <div class="dropdown-menu dropdown-menu-right dropdown-default"
-        aria-labelledby="navbarDropdownMenuLink-333">
+        <div class="dropdown-menu dropdown-menu-right dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
           <a class="dropdown-item" href="/register/"><b>Sign-up</b></a>
           <a class="dropdown-item" href="/login"><b>Login</b></a>
           <a class="dropdown-item" href="/admin"><b>Admin</b></a>
@@ -57,19 +56,17 @@
         </div>
       </li>
       {% endif %} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      
+
       &nbsp;&nbsp;&nbsp;&nbsp;
       <li class="nav-item dropdown">
         {%if user.is_authenticated%}
-        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">
           <i class="fas fa-user" style="font-size:28px;"></i>
         </a>
-        <div class="dropdown-menu dropdown-menu-right dropdown-default"
-          aria-labelledby="navbarDropdownMenuLink-333">
-          <a class="dropdown-item" href="/profile/">Profile</a>
-          <a class="dropdown-item" href="/password_change/">Change password</a>
+        <div class="dropdown-menu dropdown-menu-right dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
           <a class="dropdown-item" href="/admin">Admin</a>
+          <a class="dropdown-item" href="/password_change/">Change password</a>
           <a class="dropdown-item" href="/logout/">Logout</a>
         </div>
         {% endif %}
