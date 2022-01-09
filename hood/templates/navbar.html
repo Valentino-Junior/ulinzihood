@@ -39,7 +39,7 @@
       {%if user.is_authenticated%}
       <li class="nav-item">
         <a class="nav-link waves-effect waves-light" href="/profile/">
-          Welcome {{user.username|capfirst}}
+          {{user.username|capfirst}}
         </a>
       </li>
       {% else %}
