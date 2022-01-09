@@ -10,17 +10,17 @@
                     <img src="{{user.profile.image.url}}" width="100%" height="300px" class="img-responsive" alt="profile">
                 </div>
                 <div class="card-footer">
-                    <p class="text-muted">~~{{user.username|capfirst}}~~</p>
-                    <h5>Hood: {{user.profile.hood}}</h5>
-                    <h5>Bio: {{user.profile.bio}}</h5>
-                    <h5>Contacts: {{user.profile.contacts}}</h5>
-                    <h5>Joined: {{user.profile.join_date|timesince}}</h5>
+                    <h4 class="text-muted">~~{{user.username|capfirst}}~~</h4>
+                    <p>Hood: <b>{{user.profile.hood}}</b></p>
+                    <p>Bio: <b>{{user.profile.bio}}</b></p>
+                    <p>Contacts: <b>{{user.profile.contacts}}</b></p>
+                    <p>Joined: <b>{{user.profile.join_date|timesince}} ago</b></p>
                 </div>
             </div>
         </div>
         <div class="col-md-2"></div>
         <div class="col-md-6">
-            <h1>My Hood : {{user.profile.hood}}</h1>
+            <h1>My Hood: <b>{{user.profile.hood}}</b></h1>
             <div class="card">
                 <div class="card-title">
                     <img src="{{user.profile.hood.image.url}}" width="100%" height="400px" class="img-responsive" alt="hood image">
