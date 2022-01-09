@@ -7,7 +7,7 @@ from cloudinary.models import CloudinaryField
 class Hood(models.Model):
     name = models.CharField(max_length=20)
     location = models.CharField(max_length=20)
-    image = CloudinaryField('image',blank=True)
+    image = models.ImageField(upload_to='hood_photo', blank=True, default='hood_photo/hood.jpg')
     pub_date = models.DateTimeField(auto_now_add=True)
     admin = models.ForeignKey(User, on_delete=models.CASCADE)
 
@@ -19,7 +19,7 @@ class Facilities(models.Model):
     name = models.CharField(max_length=20)
     location = models.CharField(max_length=20)
     contact = models.CharField(max_length=30)
-    image = CloudinaryField('image',blank=True)
+    image = models.ImageField(upload_to='facilities', blank=True, default='facilities/sample.jpg')
     pub_date = models.DateTimeField(auto_now_add=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     hood = models.ForeignKey(Hood, on_delete=models.CASCADE)
@@ -30,7 +30,7 @@ class Facilities(models.Model):
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    image = CloudinaryField('image')
+    image = models.ImageField(upload_to='profile_photo', blank=True, default='profile_photo/defaultprofile.jpg')
     bio = models.CharField(max_length=255, blank=True)
     contacts = models.CharField(max_length=200)
     join_date = models.DateTimeField(auto_now_add=True)
@@ -44,7 +44,7 @@ class Business(models.Model):
     name = models.CharField(max_length=20)
     address = models.CharField(max_length=20)
     create_date = models.DateTimeField(auto_now_add=True)
-    image = CloudinaryField('image',blank=True)
+    image = models.ImageField(upload_to='biz_pic/', blank=True, default='biz_pic/bizpic.jpg')
     details = models.TextField(max_length=500)
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
     hood = models.ForeignKey(Hood, on_delete=models.CASCADE)
