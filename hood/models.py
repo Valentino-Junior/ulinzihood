@@ -7,7 +7,7 @@ from cloudinary.models import CloudinaryField
 class Hood(models.Model):
     name = models.CharField(max_length=20)
     location = models.CharField(max_length=20)
-    image = CloudinaryField('image')
+    image = CloudinaryField('image',blank=True)
     pub_date = models.DateTimeField(auto_now_add=True)
     admin = models.ForeignKey(User, on_delete=models.CASCADE)
 
@@ -19,7 +19,7 @@ class Facilities(models.Model):
     name = models.CharField(max_length=20)
     location = models.CharField(max_length=20)
     contact = models.CharField(max_length=30)
-    image = CloudinaryField('image')
+    image = CloudinaryField('image',blank=True)
     pub_date = models.DateTimeField(auto_now_add=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     hood = models.ForeignKey(Hood, on_delete=models.CASCADE)
@@ -44,7 +44,7 @@ class Business(models.Model):
     name = models.CharField(max_length=20)
     address = models.CharField(max_length=20)
     create_date = models.DateTimeField(auto_now_add=True)
-    image = CloudinaryField('image')
+    image = CloudinaryField('image',blank=True)
     details = models.TextField(max_length=500)
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
     hood = models.ForeignKey(Hood, on_delete=models.CASCADE)
