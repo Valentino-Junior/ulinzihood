@@ -2,15 +2,16 @@
 {% block content %}
 {{block.super}}
 <style>
-    .card{
-        height:90vh;
+    .card {
+        height: 90vh;
     }
-    .card-footer{
-        height:55vh;
+
+    .card-footer {
+        height: 55vh;
     }
 </style>
 <div class="container-fluid mt-4">
-    <h1 class="text-center">Businesses around: {{business|length}}</h1>
+    <h1 class="text-center"> Enterprises: <b>{{business|length}}</b></h1>
     <hr>
     <div class="row">
         {% if business %}
@@ -21,7 +22,8 @@
                     <div class="row">
                         <div class="col-md-4 mt-2 mb-2 text-center">
                             <a href="{%url 'profile'%}" style="color:black;">
-                                <img src="{{biz.owner.profile.image.url}}" class="img-responsive rounded-circle" style="width:50px; height:50px;" alt="profile image">
+                                <img src="{{biz.owner.profile.image.url}}" class="img-responsive rounded-circle"
+                                    style="width:50px; height:50px;" alt="profile image">
                             </a>
                         </div>
                         <div class="col-md-8 mt-2 mb-2">
@@ -31,20 +33,34 @@
                 </div>
                 <div class="card-title">
                     <div class="view" style="height: 245px; padding:2%;">
-                        <img src="{{biz.image.url}}" width="100%" height="300px" class="img-responsive" alt="business image">
+                        <img src="{{biz.image.url}}" width="100%" height="300px" class="img-responsive"
+                            alt="business image">
                     </div>
                 </div>
                 <div class="card-footer">
-                    <h5>Address: {{biz.address}}<br>Owner:{{biz.owner}}
-                       <br>Joined: {{biz.create_date|time}}</h5>
-                    <h5>{{biz.details}}</h5>
+                    <p>Address: <b>{{biz.address}}</b>
+                        <br> Owner: <b>{{biz.owner}}</b>
+                        <br> Details: <b>{{biz.details}}</b>
+                        <br>
+                        <p>Posted: <b>{{biz.create_date|timesince}}</b></p>
                 </div>
             </div>
             <br>
         </div>
         {% endfor %}
         {% else %}
-        <p>No Businesses have been posted for view yet</p>
+        <div class="container">
+
+            <div class=" col-md-8 d-flex justify-content-center alert alert-warning alert-dismissible fade show"
+                role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+                <strong>
+                    <p>No enterprises have been posted for view yet</p>
+                </strong>
+            </div>
+        </div>
         {% endif %}
     </div>
 </div>
