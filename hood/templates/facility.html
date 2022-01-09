@@ -19,11 +19,11 @@
     <h3 class="h3">{{facilities|length}} facilities</h3>
     <div class="row">
         <div class="col-md-4">
-            <h3>Add facility</h3>
+            <h3><b>Add Facility</b></h3>
             <form action="" class="c" method="post" enctype="multipart/form-data">
                 {% csrf_token %}
                 {{form|crispy}}
-                <button class="btn btn-sm btn-outline-info" type="submit">Add</button>
+                <button class="btn btn-sm btn-primary btn-block" type="submit">Add</button>
             </form>
         </div>
         {% for facility in facilities %}
