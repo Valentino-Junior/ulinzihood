@@ -2,9 +2,9 @@
 {% block content %}
 <div class="container">
     {% if businesses %}
-    <h5>Found {{ businesses|length }} enterprise of searched term {{ message }}</h5>
+    <h5>Found <b>{{ businesses|length }}</b> enterprise of searched term <b>{{ message }}</b></h5>
     {% else %}
-    <h4>Found 0 enterprises of searched term {{ message }}</h4>
+    <h4>Found <b> 0</b> enterprises of searched term <b>{{ message }}</b></h4>
     {% endif %}
     <div class="row">
         {% if businesses %}
