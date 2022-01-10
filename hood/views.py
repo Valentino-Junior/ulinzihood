@@ -44,6 +44,9 @@ def register(request):
 
 @login_required(login_url='/login')
 def create_profile(request):
+
+    Profile.objects.get_or_create(user=request.user)
+    
     if request.method == 'POST':
         u_form = UserUpdateForm(request.POST, instance=request.user)
         p_form = ProfileUpdateForm(request.POST,
