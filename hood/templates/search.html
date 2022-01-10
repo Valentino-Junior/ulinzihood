@@ -2,9 +2,9 @@
 {% block content %}
 <div class="container">
     {% if businesses %}
-    <h4>Found {{ businesses|length }} businesses of searched {{ message }}</h4>
+    <h5>Found {{ businesses|length }} enterprise of searched term {{ message }}</h5>
     {% else %}
-    <h4>Found 0 businesses of searched {{ message }}</h4>
+    <h4>Found 0 enterprises of searched term {{ message }}</h4>
     {% endif %}
     <div class="row">
         {% if businesses %}
@@ -12,22 +12,22 @@
         <div class="col-md-4">
             <div class="card card-default">
                 <div class="card-header">
-                    <h5>{{biz.name}}</h5>
+                    <h5><b>{{biz.name}}</b></h5>
                 </div>
                 <div class="card-title">
                     <img src="{{biz.image.url}}" width="100%" class="img-responsive" alt="searched image">
                 </div>
                 <div class="card-footer">
-                    <h5>Address: {{biz.address}}<br>Owner:{{biz.owner}}
-                        <br>Joined: {{biz.create_date|timesince}}
-                        <br>Hood: {{biz.hood}}
-                    </h5>
-                    <h5>{{biz.details}}</h5>
+                    <p>Address: <b>{{biz.address}}</b><br>Owner: <b>{{biz.owner}}</b>
+                        <br>Joined: <b>{{biz.create_date|timesince}}</b>
+                        <br>Hood: <b>{{biz.hood}}</b>
+                    </p>
+                    <p>Details: <b>{{biz.details}}</b></p>
                 </div>
             </div>
         </div>
         {% empty %}
-        <h4>There are no posts for this business.</h4>
+        <h4>There are no posts for this enterprises.</h4>
         {% endfor %}
         {% endif %}
     </div>

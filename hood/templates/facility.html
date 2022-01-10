@@ -2,15 +2,16 @@
 {% load crispy_forms_tags %}
 {% block content%}
 <style>
-    form.c{
-        margin-left:2%;
+    form.c {
+        margin-left: 2%;
     }
-    .card{
-        height:70vh;
+
+    .card {
+        height: 70vh;
     }
-   
-    h3.h3{
-        margin-left:60%;
+
+    h3.h3 {
+        margin-left: 60%;
     }
 </style>
 <div class="container">
@@ -31,7 +32,8 @@
                     <h4><b>{{facility.name}}</b></h4>
                 </div>
                 <div class="card-title">
-                    <img src="{{facility.image.url}}" width="100%" height="300vh" class="img-responsive mb-0" alt="facility image">
+                    <img src="{{facility.image.url}}" width="100%" height="300vh" class="img-responsive mb-0"
+                        alt="facility image">
                 </div>
                 <div class="card-footer">
                     <p>
@@ -43,13 +45,14 @@
         </div>
         {% empty %}
 
-        <div class=" col-md-8 d-flex justify-content-center alert alert-warning alert-dismissible fade show" role="alert">
+        <div class=" col-md-8 d-flex justify-content-center alert alert-warning alert-dismissible fade show"
+            role="alert">
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-              <span aria-hidden="true">×</span>
+                <span aria-hidden="true">×</span>
             </button>
             <strong>There are no facilities in your hood</strong>
-          </div>
-          
+        </div>
+
         {% endfor %}
     </div>
 </div>
